@@ -1,18 +1,20 @@
 function count(arr) {
-	var result = [0, 0, 0];
+	var even = 0,
+	noteven = 0,
+	zero = 0;
 	for (var i = 0; i < arr.length; i++) {
 		if (arr[i] === 0) {
-			result[2] += 1;
+			zero++;
 		} else if (arr[i]%2 === 0) {
-			result[0] += 1;
+			even++;
 		} else {
-			result[1] += 1;
+			noteven++;
 		}
 	};
-	if (result[2] === 0) {
-		console.log('четных: ' + result[0] + ';' + ' нечетных: ' + result[1] + ';');
+	if (zero === 0) {
+		console.log('четных: ' + even + ';' + ' нечетных: ' + noteven + ';');
 	} else {
-		console.log('четных: ' + result[0] + ';' + ' нечетных: ' + result[1] + ';' + ' нуль: ' + result[2] + ';');
+		console.log('четных: ' + even + ';' + ' нечетных: ' + noteven + ';' + ' нуль: ' + zero + ';');
 	};
-	return result;
+	return [even, noteven, zero];
 };
