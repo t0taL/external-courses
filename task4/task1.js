@@ -11,9 +11,9 @@ mainObj.prop7 = 7;
 mainObj.prop8 = 8;
 
 function searchProp(prop, obj) {
-	for (var key in obj.__proto__) {
+	for (var key in Object.getPrototypeOf(obj)) {
 		if (key === prop) {
-			console.log(key + ': ' + obj.__proto__[key]);
+			console.log(key + ': ' + Object.getPrototypeOf(obj)[key]);
 		};
 	};
 	console.log('Not found');
