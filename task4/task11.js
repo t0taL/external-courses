@@ -14,7 +14,7 @@ function count(str) {
         };
     };
     
-    for (var key in result) {
+	for (var key in result) {
 		console.log(key + ': ' + result[key]);
 	};
 };
