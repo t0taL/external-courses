@@ -1,35 +1,36 @@
-var Calculator = new function() {
-  var result = 0,
-      target = this;
-  this.add = function(num) {
-    if (num) result += num;
+var Calculator = (function() {
+  var _result = 0,
+      _Calculator = {};
+  _Calculator.add = function(num) {
+    if (num) _result += num;
     return function(num) {
-      return target.add(num);
+      return _Calculator.add(num);
     };
   };
-  this.subtract = function(num) {
-    if (num) result -= num;
+  _Calculator.subtract = function(num) {
+    if (num) _result -= num;
     return function(num) {
-      return target.subtract(num);
+      return _Calculator.subtract(num);
     };
   };
-  this.divide = function(num) {
-    if (num) result /= num;
+  _Calculator.divide = function(num) {
+    if (num) _result /= num;
     return function(num) {
-      return target.divide(num);
+      return _Calculator.divide(num);
     };
   };
-  this.multiply = function(num) {
-    if (num) result *= num;
+  _Calculator.multiply = function(num) {
+    if (num) _result *= num;
     return function(num) {
-      return target.multiply(num);
+      return _Calculator.multiply(num);
     };
   };
-  this.reset = function() {
-    result = 0;
-    return result;
+  _Calculator.reset = function() {
+    _result = 0;
+    return _result;
   };
-  this.getResult = function() {
-    return result;
+  _Calculator.getResult = function() {
+    return _result;
   };
-};
+  return _Calculator;
+})();
