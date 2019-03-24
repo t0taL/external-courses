@@ -1,29 +1,21 @@
-var Calculator = (function() {
-  var _result = 0,
+const Calculator = (function() {
+  let _result = 0,
       _Calculator = {};
   _Calculator.add = function(num) {
     if (num) _result += num;
-    return function(num) {
-      return _Calculator.add(num);
-    };
+    return _Calculator.add;
   };
   _Calculator.subtract = function(num) {
     if (num) _result -= num;
-    return function(num) {
-      return _Calculator.subtract(num);
-    };
+    return _Calculator.subtract;
   };
   _Calculator.divide = function(num) {
     if (num) _result /= num;
-    return function(num) {
-      return _Calculator.divide(num);
-    };
+    return _Calculator.divide;
   };
   _Calculator.multiply = function(num) {
     if (num) _result *= num;
-    return function(num) {
-      return _Calculator.multiply(num);
-    };
+    return _Calculator.multiply;
   };
   _Calculator.reset = function() {
     _result = 0;
