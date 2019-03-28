@@ -1,0 +1,17 @@
+.method3 {
+	width: 40%;
+	background-color: #5A5290;
+	color: orange;
+	text-indent : 40px;
+	font-family: Courier, monospace;
+}
+
+.method5 {
+	width: 120mm;
+	background-image: url('http://bayguzin.ru/assets/images/2014/04/zvezdnoe_nebo.jpg');
+	color: white;
+	font-size: 2em;
+	line-height: 150%;
+	text-transform: capitalize;
+	word-spacing : 25px;
+}
