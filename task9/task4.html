@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>task4</title>
+	<style>
+		body {
+			margin: 0;
+		}
+		/*First method*/
+		.block1, .first, .second, .third {
+			position: absolute;
+			width: 100%;
+			height: 300px;
+		}
+		.block1 {
+			width: 90%;
+			height: 320px;
+			left: 10px;
+			top: 10px;
+		}
+		.first {
+			background-color: #60B88D;
+		}
+		.second {
+			left: 10px;
+			top: 10px;
+			background-color: #8DC9AC;
+		}
+		.third {
+			left: 20px;
+			top: 20px;
+			background-color: #B0D1C0;
+		}
+		/*Second method*/
+		.block2 {
+			position: relative;
+			width: 90%;
+			height: 300px;
+			left: 10px;
+			top: 350px;
+			background-color: #60B88D;
+			box-shadow: 10px 10px #8DC9AC, 20px 20px #B0D1C0;
+		}
+		/*Third method*/
+		.block3 {
+			position: relative;
+			width: 90%;
+			height: 300px;
+			left: 10px;
+			top: 390px;
+			background-color: #60B88D;
+		}
+		.block3:after, .block3:before {
+			content: '';
+			position: absolute;
+			width: 100%;
+			height: 300px;
+		}
+		.block3:before {
+			left: 10px;
+			top: 10px;
+			background-color: #8DC9AC;
+			z-index: -1;
+		}
+		.block3:after {
+			left: 20px;
+			top: 20px;
+			background-color: #B0D1C0;
+			z-index: -2;
+		}
+	</style>
+</head>
+<body>
+	<div class="block1">
+		<div class='third'></div>
+		<div class='second'></div>
+		<div class='first'></div>
+	</div>
+	<div class='block2'></div>
+	<div class='block3'></div>
+</body>
+</html>

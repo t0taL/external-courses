@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>task3</title>
+	<style>
+		.shell {
+			position: relative;
+			width: 260px;
+			height: 80px;
+			background: linear-gradient(0deg, #E1E1E1, #ADADAD);
+			border: 2px solid #666666;
+			border-radius: 24px;
+			box-shadow: inset 2px 2px white, inset -2px -2px white, inset 2px -2px white, inset -2px 2px white;
+		}
+		button {
+			position: relative;
+			width: 240px;
+			height: 60px;
+			padding-bottom: 5px;
+			top: 10px;
+			left: 10px;
+			font-size: 20pt;
+			font-weight: bold;
+			color: #555555;
+			text-shadow: 0px 1px #E1E1E1;
+			background: linear-gradient(0deg, #ADADAD, #E1E1E1);
+			border: 0px solid #666666;
+			border-radius: 14px;
+			box-shadow: 2px 2px 2px #666666, -2px -1px 2px #666666, 2px -1px 2px #666666, -2px 2px 2px #666666;
+		}
+		button:before {
+			content: "\2605  ";
+			color: #888888;
+		}
+		button:after {
+			content: " \2605";
+			color: #888888;
+		}
+		button:active {
+			box-shadow: inset -1px -1px 2px #666666, inset 1px 2px 2px #666666, inset -1px 2px 2px #666666, inset 1px -1px 2px #666666;
+		}
+	</style>
+</head>
+<body>
+	<div class='shell'>
+		<button>CHECKOUT</button>
+	</div>
+</body>
+</html>
