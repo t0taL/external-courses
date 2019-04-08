@@ -1,0 +1,23 @@
+#tab {
+	border-spacing : 2px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	color: #5A799B;
+}
+
+.header_row {
+	background-color: #E3EAF3;
+	text-transform: uppercase;
+	font-size: 75%;
+}
+
+.row {
+	background-color: #E3EAF3;
+}
+.t_header_cell {
+	padding: 5px;
+}
+
+.t_cell {
+	padding: 15px;
+}

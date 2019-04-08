@@ -1,0 +1,11 @@
+.row:nth-child(2n) {
+	background-color: #F2F6FA;
+}
+
+.t_cell:first-child {
+	text-transform: capitalize;
+}
+
+.row:hover {
+	background-color: #E2E5E9;
+}
