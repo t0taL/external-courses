@@ -371,6 +371,7 @@ svg:hover #emailIcon {
 		display: flex;
 		width: 56px;
 		height: 60px;
+		margin-left: 20px;
 		background-color: #fff;
 		flex-direction: column;
 		justify-content: space-around;
@@ -390,6 +391,10 @@ svg:hover #emailIcon {
 	.nav-container_menu:hover + .nav-container_wrap_buttons {
 		left: -70px;
 		background-color: #fff;
+	}
+
+	.nav-container_wrap_search {
+		padding: 0;
 	}
 
 	/*----------------Main-------------------*/
