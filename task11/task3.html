@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>task3</title>
+	<style>
+		* {
+			font-family: Arial, Helvetica, sans-serif;
+			font-size: 24px;
+		}
+
+		.input-container {
+			position: relative;
+		}
+
+		.input-container_input {
+			border: none;
+			border-bottom: 1px solid black;
+			padding-top: 18px;
+		}
+
+		.input-container_label {
+			position: absolute;
+			top: 18px;
+			left: 0px;
+			pointer-events: none;
+			color: lightgrey;
+			transition-duration: 100ms;
+		}
+
+		.input-container_input:valid + .input-container_label {
+			top: -0px;
+			left: 3px;
+			font-size: 13px;
+			font-weight: 600;
+			color: steelblue;
+		}
+	</style>
+</head>
+<body>
+	<div class="input-container">
+		<input class="input-container_input" type="text" required>
+		<label class="input-container_label">Enter text</label>
+	</div>
+</body>
+</html>

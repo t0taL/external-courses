@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>task2</title>
+	<style>
+
+		/* -------------------------------------
+		--------------Animation 1---------------
+		------------------------------------- */
+		.loader-wrap {
+			display: flex;
+			width: 120px;
+			height: 40px;
+			margin: 20px;
+			justify-content: space-around;
+			align-content: center;
+		}
+
+		.loader-wrap_circle {
+			width: 20px;
+			height: 20px;
+			border-radius: 50%;
+			animation: circle 1s linear infinite;
+		}
+
+		.loader-wrap_circle:nth-child(2) {
+			animation-delay:  100ms;
+		}
+
+		.loader-wrap_circle:last-child {
+			animation-delay:  200ms;
+		}
+
+		@keyframes circle {
+			0% {transform: scale(1, 1); background: lightgrey;}
+			25% {transform: scale(1.5, 1.5); background: gray;}
+			50% {transform: scale(2, 2); background: black;}
+			75% {transform: scale(1.5, 1.5); background: gray;}
+			100% {transform: scale(1, 1); background: lightgrey;}
+		}
+
+		/* -------------------------------------
+		--------------Animation 2---------------
+		------------------------------------- */
+
+		.jumper-wrap {
+			display: flex;
+			width: 200px;
+			height: 100px;
+			margin: 20px;
+		}
+
+		.jumper-wrap_block {
+			width: 48px;
+			height: 100%;
+			border: 1px solid black;
+		}
+
+		.jumper-wrap_circle-wrap {
+			width: 100px;
+			height: 100%;
+		}
+
+		.jumper-wrap_circle-wrap_circle {
+			position: relative;
+			width: 25px;
+			height: 25px;
+			border-radius: 50%;
+			background: blueviolet;
+			animation: circle-jump 5s linear infinite alternate, circle-move 300ms linear infinite alternate;
+		}
+
+		@keyframes circle-jump {
+			0% {top: 0px;}
+			50% {top: 38px;}
+			100% {top: 75px;}
+		}
+
+		@keyframes circle-move {
+			0% {left: 0px;}
+			50% {left: 38px;}
+			100% {left: 75px;}
+		}
+
+		/* -------------------------------------
+		--------------Animation 3---------------
+		------------------------------------- */
+
+		.metamorphosis {
+			width: 100px;
+			height: 100px;
+			margin: 20px;
+			background: radial-gradient(black, lightgrey);
+			border: 1px solid black;
+			animation: metamorphosis 8s linear infinite;
+		}
+
+		@keyframes metamorphosis {
+			0% {border-radius: 50%; transform: scale(1) skew(0) rotate(0); background: radial-gradient(black, lightgrey);} /*круг с градиентом*/
+			14.29% {border-radius: 0px; transform: scale(1) skew(0) rotate(0); background: radial-gradient(black, lightgrey);} /*квадрат*/
+			28.58% {border-radius: 0px; transform: scale(1) skew(0) rotate(0); background: radial-gradient( grey, black);} /*смена градиента*/
+			42.87% {border-radius: 0px; transform: scale(0.5, 0.5) skew(30deg, 25deg) rotate(0deg); background: radial-gradient( grey, black);} /*изменение размера и искажение*/
+			57.16% {border-radius: 0px; transform: scale(0.5, 0.5) skew(30deg, 25deg) rotate(360deg); background: radial-gradient( grey, black);} /*вращение*/
+			71.45% {border-radius: 0px; transform: scale(0.5, 0.5) skew(30deg, 25deg) rotate(360deg); background: radial-gradient( lightgrey, gray);} /*изменение градиента*/
+			85.74% {border-radius: 50%; transform: scale(1) skew(0) rotate(360deg); background: radial-gradient( lightgrey, gray);} /*круг*/
+			100% {border-radius: 50%; transform: scale(1) skew(0) rotate(0); background: radial-gradient(black, lightgrey);} 
+		}
+	</style>
+</head>
+<body>
+	<!-----------Animation 1-------------->
+	<div class="loader-wrap">
+		<div class="loader-wrap_circle"></div>
+		<div class="loader-wrap_circle"></div>
+		<div class="loader-wrap_circle"></div>
+	</div>
+	<!-----------Animation 2-------------->
+	<div class="jumper-wrap">
+		<div class="jumper-wrap_block"></div>
+		<div class="jumper-wrap_circle-wrap">
+			<div class="jumper-wrap_circle-wrap_circle"></div>
+		</div>
+		<div class="jumper-wrap_block"></div>
+	</div>
+	<!-----------Animation 3-------------->
+	<div class="metamorphosis"></div>
+</body>
+</html>

@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700');
+
+* {
+	margin: 0px;
+	padding: 0px;
+	font-family: 'Raleway', sans-serif;
+}
+
+/*-------------------------------
+-------------Sidebar-------------
+-------------------------------*/
+
+.sidebar-container {
+	position: relative;
+	display: grid;
+	width: 200px;
+	height: 900px;
+	grid-template-rows: 115px 240px 185px 350px;
+	grid-row-gap: 5px;
+	background: #19202e;
+}
+
+.sidebar-container a {
+	line-height: 38px;
+	padding: 0 20px;
+	text-decoration: none;
+	color: #b6b6b6;
+}
+
+.sidebar-container a:hover {
+	background: #15a4fa;
+	color: #fff;
+}
+
+/*------------Button-----------*/
+
+.sidebar-container_add {
+	display: flex;
+	grid-row: 1;
+	justify-content: center;
+	align-items: center;
+	background: #1f2637;
+}
+
+.sidebar-container_add_button {
+	width: 160px;
+	height: 44px;
+	border-radius: 5px;
+	background: #f2795a;
+	color: #fff;
+	text-align: center;
+	line-height: 44px;
+	font-size: 14px;
+	font-weight: 700;
+	cursor: pointer;
+}
+
+.sidebar-container_add_button i {
+	padding-right: 13px;
+}
+
+/*------------Nav-----------*/
+
+.sidebar-container_nav {
+	display: flex;
+	grid-row: 2;
+	padding: 0 0 15px 0;
+	border-top: 1px solid #282f41;
+	background: #1f2637;
+	flex-direction: column;
+}
+
+/*------------MyFolders-----------*/
+
+.sidebar-container_my-folders {
+	display: flex;
+	grid-row: 3;
+	padding-top: 15px;
+	border-top: 1px solid #282f41;
+	background: #1f2637;
+	flex-direction: column;
+}
+
+.sidebar-container_my-folders a {
+	line-height: 33px;
+}
+
+.sidebar-container_my-folders b {
+	position: relative;
+	top: 5px;
+	padding: 0 11px 0 2px;
+	font-size: 30px;
+}
+
+.sidebar-container_my-folders a:first-child b {
+	color: #e64c66;
+}
+
+.sidebar-container_my-folders a:nth-child(2) b {
+	color: #ffab00;
+}
+
+.sidebar-container_my-folders a:nth-child(3) b {
+	color: #00bfdd;
+}
+
+.sidebar-container_my-folders a:last-child b {
+	color: #7874cf;
+}
+
+/*------------Actions-----------*/
+
+.sidebar-container_recent-actions {
+	grid-row: 4;
+	border-top: 1px solid #282f41;
+	background: #1f2637;
+}
+
+.sidebar-container_recent-actions div {
+	position: relative;
+	padding: 25px 20px 0 45px;
+	color: #b6b6b6;
+	font-size: 12px;
+	line-height: 20px;
+}
+
+.sidebar-container_recent-actions i {
+	position: absolute;
+	font-size: 16px;
+	left: 18px;
+	top: 30px;
+	font-weight: 400;
+}
+
+.sidebar-container_recent-actions p {
+	padding-top: 10px;
+	font-weight: 300;
+}

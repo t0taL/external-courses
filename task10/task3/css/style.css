@@ -381,7 +381,7 @@ svg:hover #emailIcon {
 
 	.nav-container_wrap_buttons {
 		position: relative;
-		left: -900px;
+		left: -1000px;
 		transition-duration: 300ms;
 	}
 
