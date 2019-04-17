@@ -24,6 +24,7 @@
 	line-height: 38px;
 	padding: 0 20px;
 	text-decoration: none;
+	text-transform: capitalize;
 	color: #b6b6b6;
 }
 
@@ -52,6 +53,7 @@
 	line-height: 44px;
 	font-size: 14px;
 	font-weight: 700;
+	text-transform: uppercase;
 	cursor: pointer;
 }
 
@@ -132,7 +134,15 @@
 	font-weight: 400;
 }
 
-.sidebar-container_recent-actions p {
+.sidebar-container_recent-actions div p:first-letter {
+	text-transform: uppercase;
+}
+
+.sidebar-container_recent-actions b {
+	text-transform: capitalize;
+}
+
+.sidebar-container_recent-actions div p:nth-child(3n) {
 	padding-top: 10px;
 	font-weight: 300;
 }
