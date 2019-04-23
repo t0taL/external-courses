@@ -1,0 +1,44 @@
+#activate {
+  position: absolute;
+  left: 30rem;
+  top: 4rem;
+  width: 4rem;
+  height: 4rem;
+  border: 1px solid black;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 1px black;
+}
+
+#activate:active {
+  box-shadow: inset 0 1px black;
+}
+
+#activate:hover {
+  background: lightgreen;
+}
+
+#main-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 27.5rem;
+  height: 27.5rem;
+  padding: 0.5rem;
+  border: 1px solid black;
+  align-content: flex-start;
+}
+
+.primary-items,
+.primary-items-new {
+  width: 8rem;
+  height: 8rem;
+  margin: 0.5rem;
+  border: 1px solid black;
+  font-weight: bolder;
+  text-align: center;
+  line-height: 8rem;
+}
+
+.primary-items-new {
+  background: lightgreen;
+}
