@@ -1,4 +1,4 @@
-#raiting {
+#rating {
   display: flex;
   width: 210px;
   height: 40px;
@@ -9,16 +9,16 @@
   line-height: 40px;
 }
 
-#raiting li {
+#rating li {
   cursor: pointer;
   -webkit-user-select: none;
 }
 
-.raiting_red {
+.rating_red {
   color: red;
 }
 
-.raiting_red-black {
+.rating_red-black {
   background: linear-gradient(to right, red 50%, black 50%);
   background-clip: text;
   -webkit-text-fill-color: transparent;
