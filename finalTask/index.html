@@ -14,7 +14,7 @@
     <a href="#" class="header-container_info-links">our support</a>
     <div class="header-container_sign-in">
       <div class="header-container_sign-in_title">
-        <img src="img/no-foto.jpg" alt="foto">
+        <img class="header-container_sign-in_title_img" src="img/no-foto.jpg" alt="foto">
         <span>sign-in</span>
         <i class="fas fa-chevron-circle-down"></i>
       </div>
@@ -31,7 +31,9 @@
   <section id="center-section-wrap">
     <aside class="sidebar-container">
       <section class="sidebar-container_add">
-        <div class="sidebar-container_add_button"><i class="fas fa-plus"></i>&nbsp; add a book</div>
+        <button class="sidebar-container_add_button">
+          <i class="fas fa-plus"></i>&nbsp; add a book
+        </button>
         <div class="sidebar-container_add_form-wrap">
           <form action="GET" class="sidebar-container_add_form-wrap_form">
             <input id="bookTitle" type="text" placeholder="The book title">
@@ -40,7 +42,7 @@
             <input id="bookCost" type="number" placeholder="The book cost">
             Book categories (For multiple selections press ctrl + click): <select id="bookCategories" multiple="multiple">
               <option value="must_read">Must Read Title</option>
-              <option value="best_of_list">Best Of List</option>
+              <option value="best">Best Of List</option>
               <option value="classic_novels">Classic Novels</option>
               <option value="non_fiction">Non Fiction</option>
             </select>
@@ -54,18 +56,18 @@
       </div>
       </section>
       <nav class="sidebar-container_nav list-group">
-        <a href="#" class="list-group-item"><i class="fa fa-book fa-fw"></i>&nbsp; now reading</a>
-        <a href="#" class="list-group-item"><i class="fa fa-globe-americas fa-fw"></i>&nbsp; browse</a>
-        <a href="#" class="list-group-item"><i class="fa fa-shopping-cart fa-fw"></i>&nbsp; buy books</a>
-        <a href="#" class="list-group-item"><i class="far fa-star fa-fw"></i>&nbsp; favourite books</a>
-        <a href="#" class="list-group-item"><i class="fa fa-th-list fa-fw"></i>&nbsp; wishlist</a>
-        <a href="#" class="list-group-item"><i class="far fa-clock fa-fw"></i>&nbsp; history</a>
+        <a class="list-group-item"><i class="fa fa-book fa-fw"></i>&nbsp; now reading</a>
+        <a class="list-group-item"><i class="fa fa-globe-americas fa-fw"></i>&nbsp; browse</a>
+        <a class="list-group-item"><i class="fa fa-shopping-cart fa-fw"></i>&nbsp; buy books</a>
+        <a class="list-group-item"><i class="far fa-star fa-fw"></i>&nbsp; favourite books</a>
+        <a class="list-group-item"><i class="fa fa-th-list fa-fw"></i>&nbsp; wishlist</a>
+        <a class="list-group-item"><i class="far fa-clock fa-fw"></i>&nbsp; history</a>
       </nav>
       <section class="sidebar-container_my-folders">
-        <a href="#"><span>&bull;</span> must read titles</a>
-        <a href="#"><span>&bull;</span> best of list</a>
-        <a href="#"><span>&bull;</span> classic novels</a>
-        <a href="#"><span>&bull;</span> non fiction</a>
+        <a id="btnMustReadTitles" data-value="must_read" data-name="Must Read Titles"><span>&bull;</span> must read titles</a>
+        <a id="btnBestOfList" data-value="best" data-name="Best of List"><span>&bull;</span> best of list</a>
+        <a id="btnClassicNovels" data-value="classic_novels" data-name="Classic Novels"><span>&bull;</span> classic novels</a>
+        <a id="btnNonFiction" data-value="non_fiction" data-name="Non Fiction"><span>&bull;</span> non fiction</a>
       </section>
       <section class="sidebar-container_recent-actions"></section>
     </aside>
@@ -73,22 +75,32 @@
       <div class="main-container_title">browse available books</div>
       <nav class="main-container_nav">
         <div class="main-container_nav_links-wrap">
-          <a id="btnAllBooks">all books</a>
-          <a id="btnMostRecent">most recent</a>
-          <a id="btnMostPopular">most popular</a>
-          <a id="btnFreeBooks">free books</a>
+          <a id="btnAllBooks" data-value="id" data-name="All Books">all books</a>
+          <a id="btnMostRecent" data-value="updatedAt" data-name="Most Recent">most recent</a>
+          <a id="btnMostPopular" data-value="rating" data-name="Most Popular">most popular</a>
+          <a id="btnFreeBooks" data-value="cost" data-name="Free Books">free books</a>
         </div>
-        <input type="text" placeholder="Enter Keywords" id="inputSearch">
+        <input class="main-container_nav_search" type="text" placeholder="Enter Keywords" id="inputSearch">
         <i class="fas fa-search" id="btnSearch"></i>
       </nav>
       <section class="main-container_content"></section>
     </section>
   </section>
   <footer class="footer-container">
-    <div class="footer-container_help"><i class="fas fa-question-circle"></i></div>
-    <div class="footer-container_tools"><i class="fas fa-cog"></i></div>
+    <button class="footer-container_help">
+      <i class="fas fa-question-circle"></i>
+    </button>
+    <button class="footer-container_tools">
+      <i class="fas fa-cog"></i>
+    </button>
   </footer>
-  <!-- <script type="module" src="js/main.js"></script> -->
-  <script src="js/script.js"></script>
+  <!-- <script src="js/script.js"></script> -->
+  <script src="js/view/renders.js"></script>
+  <script src="js/model/constructors.js"></script>
+  <script src="js/model/addingBooks.js"></script>
+  <script src="js/model/booksFilter.js"></script>
+  <script src="js/model/signIn.js"></script>
+  <script src="js/model/startInit.js"></script>
+  <script src="js/controller/mainController.js"></script>
 </body>
 </html>

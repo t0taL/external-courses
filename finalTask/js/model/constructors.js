@@ -1,11 +1,9 @@
-import {localBooks} from './localData.js';
-import {renderHistory} from './renderElems.js';
-
 // -------------------------------------
-// ---------Book constructor------------
+// -----------Constructors--------------
 // -------------------------------------
 
-export class Book {
+// book constructor
+class Book {
   constructor () {
 // getting elem
     this.wrap = document.querySelector('.main-container_content');
@@ -87,6 +85,7 @@ export class Book {
           else newLocalBooks[e.target.parentNode.parentNode.id - 1].rating = i + 1;
         }
       }
+// saving book rating changes
       localStorage.setItem('BOOKS', JSON.stringify(newLocalBooks));
       newTargetBookRating = localBooks()[e.target.parentNode.parentNode.id - 1].rating;
       renderHistory(`You change the rating of <b>${this.title.innerHTML}</b> by <b>${this.author.innerHTML.slice(3)}</b> to <b>${newTargetBookRating}</b> from <b>${targetBookRating} stars</b>.`, new Date());
@@ -105,11 +104,8 @@ export class Book {
   };
 };
 
-// -------------------------------------
-// --------------History----------------
-// -------------------------------------
-
-export class History {
+// history constructor
+class History {
   constructor () {
 // getting elem
     this.wrap = document.querySelector('.sidebar-container_recent-actions');

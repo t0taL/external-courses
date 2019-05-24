@@ -19,12 +19,9 @@
       url('https://nomail.com.ua/files/woff2/6493f4032b0372533ac0084d8f5fc18e.woff2') format('woff2');
 }
 
-    /* @import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700'); */
-
 * {
   margin: 0px;
   padding: 0px;
-  /* font-family: 'Raleway', sans-serif; */
   font-family: 'ProximaNova', sans-serif;
 }
 
@@ -83,7 +80,15 @@ html {
   pointer-events: none;
 }
 
-.header-container_sign-in_title > img {
+/* .header-container_sign-in_title > img {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  -webkit-user-select: none;
+} */
+
+.header-container_sign-in_title_img {
   width: 30px;
   height: 30px;
   border: 1px solid #fff;
@@ -151,6 +156,7 @@ html {
   text-decoration: none;
   text-transform: capitalize;
   color: #b6b6b6;
+  cursor: pointer;
 }
 
 .sidebar-container a:hover,
@@ -173,6 +179,7 @@ html {
 .sidebar-container_add_button {
   width: 160px;
   height: 44px;
+  border: none;
   border-radius: 5px;
   background: #f2795a;
   color: #fff;
@@ -188,7 +195,7 @@ html {
   background: #eb846b;
 }
 
-.sidebar-container_add_button i {
+.sidebar-container_add_button > i {
   padding-right: 13px;
 }
 
@@ -304,6 +311,11 @@ html {
   color: #7874cf;
 }
 
+/* for JS */
+.sidebar-container_my-folders_active-btn {
+  background: #15a4fa;
+  color: #fff !important;
+}
 /*----------Sidebar actions---------*/
 
 .sidebar-container_recent-actions {
@@ -324,6 +336,7 @@ html {
   background: #ccd5e4;
 }
 
+/* Не задаю класс элементам истории (ниже), чтобы лишний раз не привязывать эти классы в JS */
 .sidebar-container_recent-actions div {
   position: relative;
   padding: 25px 20px 0 45px;
@@ -408,20 +421,30 @@ html {
   background: #97b3ce;
 }
 
+/* For JS */
 .main-container_nav_active {
   color: #fff !important;
   background: #97b3ce;
 }
 
-.main-container_nav input {
+/* .main-container_nav input {
   width: 340px;
   height: 32px;
   padding-left: 20px;
   padding-right: 40px;
   border: 1px solid #c7cddb;
   border-radius: 20px;
-}
+} */
 
+.main-container_nav_search {
+  width: 340px;
+  height: 32px;
+  padding-left: 20px;
+  padding-right: 40px;
+  border: 1px solid #c7cddb;
+  border-radius: 20px;
+  outline:none;
+}
 .main-container_nav i {
   position: absolute;
   right: 40px;
@@ -438,7 +461,6 @@ html {
 .main-container_content {
   grid-row: 3;
   display: grid;
-  /* padding: 10px 10px; */
   padding: 10px 10px;
   overflow: auto;
   overflow-x: hidden;
@@ -452,11 +474,11 @@ html {
   display: flex;
   width: 200px;
   height: 350px;
-  /* padding: 15px 10px; */
   padding: 15px 0px;
   flex-direction: column;
 }
 
+/* Не задаю класс элементам ниже, чтобы лишний раз не привязывать эти классы в JS при создании книг */
 .main-container_content_item img {
   width: 200px;
   height: 275px;
@@ -506,8 +528,9 @@ html {
   justify-content: flex-end;
 }
 
-.footer-container div {
+.footer-container > button {
   width: 55px;
+  border: none;
   color: #fff;
   text-align: center;
   line-height: 45px;
