@@ -3,9 +3,9 @@
 // -------------------------------------
 
 // Getting books obj from server
-function myFetch () {
+function myFetch (method, url) {
   var xhr = new XMLHttpRequest();
-  xhr.open('GET', 'https://rsu-library-api.herokuapp.com/books', false);
+  xhr.open(method, url, false);
   xhr.send();
   if (xhr.status === 200) return JSON.parse(xhr.responseText);
   else console.log(`Load books ERROR: ${xhr.status} : ${xhr.statusText}`);
@@ -13,7 +13,7 @@ function myFetch () {
 
 // Upload data to localStorage
 (function toLocalStorage () {
-  if (!localStorage['BOOKS']) localStorage.setItem('BOOKS', JSON.stringify(myFetch()));
+  if (!localStorage['BOOKS']) localStorage.setItem('BOOKS', JSON.stringify(myFetch('GET', 'https://rsu-library-api.herokuapp.com/books')));
 })();
 
 // getting local books

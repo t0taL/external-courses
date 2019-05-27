@@ -6,7 +6,7 @@
 class Book {
   constructor () {
 // getting elem
-    this.wrap = document.querySelector('.main-container_content');
+    this.wrap = document.querySelector('.main-container__content');
 // creating elems
     this.item = document.createElement('div');
     this.img = document.createElement('img');
@@ -18,8 +18,8 @@ class Book {
       this.stars[i] = document.createElement('i');
     };
 // to add css classes
-    this.item.className = 'main-container_content_item';
-    this.rating.className = 'main-container_content_item_rating';
+    this.item.className = 'main-container__content__item';
+    this.rating.className = 'main-container__content__item__rating';
 // there are methods for filling elems
     this.addId = function(num) {
       this.item.id = num;
@@ -35,12 +35,12 @@ class Book {
     };
     this.addRating = function (rating) {
       for (let i = 0; i < 5; i++) {
-        if (i < rating - 1) this.stars[i].className = 'fas fa-star main-container_content_item_rating_star';
+        if (i < rating - 1) this.stars[i].className = 'fas fa-star main-container__content__item__rating__star';
         else if (i == rating - 1 || i == rating - 0.5) {
-          if ((rating ^ 0) == rating) this.stars[i].className = 'fas fa-star main-container_content_item_rating_star';
-          else this.stars[i].className = 'fas fa-star-half-alt main-container_content_item_rating_star';
+          if ((rating ^ 0) == rating) this.stars[i].className = 'fas fa-star main-container__content__item__rating__star';
+          else this.stars[i].className = 'fas fa-star-half-alt main-container__content__item__rating__star';
         }
-        else this.stars[i].className = 'far fa-star main-container_content_item_rating_star';
+        else this.stars[i].className = 'far fa-star main-container__content__item__rating__star';
       };
     };
 // to add listeners for rating
@@ -51,26 +51,26 @@ class Book {
     this.hoverRating = function (e) {
       for (let i = 0; i < 5; i++) {
         if (this.stars[i] === e.target) {
-          if (e.pageX > e.target.offsetLeft + 8) this.stars[i].className = 'fas fa-star main-container_content_item_rating_star';
-          else this.stars[i].className = 'fas fa-star-half-alt main-container_content_item_rating_star';
+          if (e.pageX > e.target.offsetLeft + 8) this.stars[i].className = 'fas fa-star main-container__content__item__rating__star';
+          else this.stars[i].className = 'fas fa-star-half-alt main-container__content__item__rating__star';
         }
-        else if (this.rating === e.target.parentNode) this.stars[i].className = 'fas fa-star main-container_content_item_rating_star';
+        else if (this.rating === e.target.parentNode) this.stars[i].className = 'fas fa-star main-container__content__item__rating__star';
         else break;
       }
-      for (let j = 5 - 1; j >= 0; j--) {
-        if (this.rating === e.target.parentNode && this.stars[j] !== e.target) this.stars[j].className = 'far fa-star main-container_content_item_rating_star';
+      for (let j = 4; j >= 0; j--) {
+        if (this.rating === e.target.parentNode && this.stars[j] !== e.target) this.stars[j].className = 'far fa-star main-container__content__item__rating__star';
         else break;
       }
     }
     this.returnRating = function (e) {
       const targetBookRating = localBooks()[e.target.parentNode.parentNode.id - 1].rating;
       for (let i = 0; i < 5; i++) {
-        if (i < targetBookRating - 1) this.stars[i].className = 'fas fa-star main-container_content_item_rating_star';
+        if (i < targetBookRating - 1) this.stars[i].className = 'fas fa-star main-container__content__item__rating__star';
         else if (i == targetBookRating - 1 || i == targetBookRating - 0.5) {
-          if ((targetBookRating ^ 0) == targetBookRating) this.stars[i].className = 'fas fa-star main-container_content_item_rating_star';
-          else this.stars[i].className = 'fas fa-star-half-alt main-container_content_item_rating_star';
+          if ((targetBookRating ^ 0) == targetBookRating) this.stars[i].className = 'fas fa-star main-container__content__item__rating__star';
+          else this.stars[i].className = 'fas fa-star-half-alt main-container__content__item__rating__star';
         }
-        else this.stars[i].className = 'far fa-star main-container_content_item_rating_star';
+        else this.stars[i].className = 'far fa-star main-container__content__item__rating__star';
       }
     }
     this.changeRating = function (e) {
@@ -90,7 +90,7 @@ class Book {
       newTargetBookRating = localBooks()[e.target.parentNode.parentNode.id - 1].rating;
       renderHistory(`You change the rating of <b>${this.title.innerHTML}</b> by <b>${this.author.innerHTML.slice(3)}</b> to <b>${newTargetBookRating}</b> from <b>${targetBookRating} stars</b>.`, new Date());
     }
-// to add elems on page
+// adding elems on page
     this.addBookOnPage = function () {
       this.wrap.appendChild(this.item);
       this.item.appendChild(this.img);
@@ -108,7 +108,7 @@ class Book {
 class History {
   constructor () {
 // getting elem
-    this.wrap = document.querySelector('.sidebar-container_recent-actions');
+    this.wrap = document.querySelector('.sidebar-container__recent-actions');
 // creating elems
     this.item = document.createElement('div');
     this.icon = document.createElement('i');
@@ -134,6 +134,9 @@ class History {
       if (currentTime.getMinutes() - createTime.getMinutes() < 1) this.actionTime.innerHTML = 'Just now.';
       else if (currentTime.getMinutes() - createTime.getMinutes() >= 60) this.actionTime.innerHTML = `${(Math.floor(currentTime.getMinutes() - createTime.getMinutes())/60)} hour(s) ${currentTime.getMinutes() % createTime.getMinutes()} minute(s) ago.`;
       else this.actionTime.innerHTML = `${currentTime.getMinutes() - createTime.getMinutes()} minute(s) ago.`;
+    };
+    this.updateHistoryTime = function () {
+      this.item.appendChild(this.actionTime);
     };
   };
 };

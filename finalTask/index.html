@@ -9,33 +9,32 @@
 </head>
 <body>
   <header class="header-container">
-    <a href="#" class="header-container_info-links">help center</a>
-    <span>&bull;</span>
-    <a href="#" class="header-container_info-links">our support</a>
-    <div class="header-container_sign-in">
-      <div class="header-container_sign-in_title">
-        <img class="header-container_sign-in_title_img" src="img/no-foto.jpg" alt="foto">
+    <a href="#" class="header-container__info-links">help center</a>&bull;
+    <a href="#" class="header-container__info-links">our support</a>
+    <div class="header-container__sign-in">
+      <div class="header-container__sign-in__title">
+        <img class="header-container__sign-in__title__img" src="img/no-foto.jpg" alt="foto">
         <span>sign-in</span>
         <i class="fas fa-chevron-circle-down"></i>
       </div>
-      <form class="header-container_sign-in_menu">
+      <form class="header-container__sign-in__menu">
         <input type="text" placeholder="Login">
         <input type="password" placeholder="Password">
-        <div class="header-container_sign-in_menu_btn-wrap">
-          <button type="submit" class="header-container_sign-in_menu_btn-wrap_btn">sign-in</button>
-          <button type="reset" class="header-container_sign-in_menu_btn-wrap_btn">reset</button>
+        <div class="header-container__sign-in__menu__buttons-wrap">
+          <button type="submit" class="header-container__sign-in__menu__buttons-wrap__button">sign-in</button>
+          <button type="reset" class="header-container__sign-in__menu__buttons-wrap__button">reset</button>
         </div>
       </form>
     </div>
   </header>
   <section id="center-section-wrap">
     <aside class="sidebar-container">
-      <section class="sidebar-container_add">
-        <button class="sidebar-container_add_button">
+      <section class="sidebar-container__add">
+        <button class="sidebar-container__add__button">
           <i class="fas fa-plus"></i>&nbsp; add a book
         </button>
-        <div class="sidebar-container_add_form-wrap">
-          <form action="GET" class="sidebar-container_add_form-wrap_form">
+        <div class="sidebar-container__add__form-wrap">
+          <form action="GET" class="sidebar-container__add__form-wrap__form">
             <input id="bookTitle" type="text" placeholder="The book title">
             <input id="authorFirstName" type="text" placeholder="The author's first name">
             <input id="authorLastName" type="text" placeholder="The author's last name">
@@ -47,15 +46,15 @@
               <option value="non_fiction">Non Fiction</option>
             </select>
             <input id="bookImg" type="text" placeholder="Book image link">
-            <div class="sidebar-container_add_form-wrap_form_btns-wrap">
-              <button type="button" class="sidebar-container_add_form-wrap_form_btns-wrap_btn-add">Add book</button>
-              <button type="reset" class="sidebar-container_add_form-wrap_form_btns-wrap_btn-reset">Reset</button>
-              <button type="button" class="sidebar-container_add_form-wrap_form_btns-wrap_btn-close">Close</button>
+            <div class="sidebar-container__add__form-wrap__form__buttons-wrap">
+              <button type="button" id="formAddButton" class="sidebar-container__add__form-wrap__form__buttons-wrap__button">Add book</button>
+              <button type="reset" class="sidebar-container__add__form-wrap__form__buttons-wrap__button">Reset</button>
+              <button type="button" id="formCloseButtton" class="sidebar-container__add__form-wrap__form__buttons-wrap__button">Close</button>
               </div>
           </form>
       </div>
       </section>
-      <nav class="sidebar-container_nav list-group">
+      <nav class="sidebar-container__nav list-group">
         <a class="list-group-item"><i class="fa fa-book fa-fw"></i>&nbsp; now reading</a>
         <a class="list-group-item"><i class="fa fa-globe-americas fa-fw"></i>&nbsp; browse</a>
         <a class="list-group-item"><i class="fa fa-shopping-cart fa-fw"></i>&nbsp; buy books</a>
@@ -63,38 +62,37 @@
         <a class="list-group-item"><i class="fa fa-th-list fa-fw"></i>&nbsp; wishlist</a>
         <a class="list-group-item"><i class="far fa-clock fa-fw"></i>&nbsp; history</a>
       </nav>
-      <section class="sidebar-container_my-folders">
+      <section class="sidebar-container__my-folders">
         <a id="btnMustReadTitles" data-value="must_read" data-name="Must Read Titles"><span>&bull;</span> must read titles</a>
         <a id="btnBestOfList" data-value="best" data-name="Best of List"><span>&bull;</span> best of list</a>
         <a id="btnClassicNovels" data-value="classic_novels" data-name="Classic Novels"><span>&bull;</span> classic novels</a>
         <a id="btnNonFiction" data-value="non_fiction" data-name="Non Fiction"><span>&bull;</span> non fiction</a>
       </section>
-      <section class="sidebar-container_recent-actions"></section>
+      <section class="sidebar-container__recent-actions"></section>
     </aside>
     <section class="main-container">
-      <div class="main-container_title">browse available books</div>
-      <nav class="main-container_nav">
-        <div class="main-container_nav_links-wrap">
+      <div class="main-container__title">browse available books</div>
+      <nav class="main-container__nav">
+        <div class="main-container__nav__links-wrap">
           <a id="btnAllBooks" data-value="id" data-name="All Books">all books</a>
           <a id="btnMostRecent" data-value="updatedAt" data-name="Most Recent">most recent</a>
           <a id="btnMostPopular" data-value="rating" data-name="Most Popular">most popular</a>
           <a id="btnFreeBooks" data-value="cost" data-name="Free Books">free books</a>
         </div>
-        <input class="main-container_nav_search" type="text" placeholder="Enter Keywords" id="inputSearch">
+        <input class="main-container__nav__search" type="text" placeholder="Enter Keywords" id="inputSearch">
         <i class="fas fa-search" id="btnSearch"></i>
       </nav>
-      <section class="main-container_content"></section>
+      <section class="main-container__content"></section>
     </section>
   </section>
   <footer class="footer-container">
-    <button class="footer-container_help">
+    <button class="footer-container__help">
       <i class="fas fa-question-circle"></i>
     </button>
-    <button class="footer-container_tools">
+    <button class="footer-container__tools">
       <i class="fas fa-cog"></i>
     </button>
   </footer>
-  <!-- <script src="js/script.js"></script> -->
   <script src="js/view/renders.js"></script>
   <script src="js/model/constructors.js"></script>
   <script src="js/model/addingBooks.js"></script>

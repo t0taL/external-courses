@@ -6,7 +6,7 @@ class AddBook {
   constructor () {
 // selected options of <select> input of 'add book' form
     this.selectedCategories = function () {
-      const result = [];
+      let result = [];
       for (let i = 0; i < this.selectBookCategories.selectedOptions.length; i++) {
         result.push(this.selectBookCategories.selectedOptions[i].value);
       };
@@ -14,10 +14,10 @@ class AddBook {
     };
 // functions for listeners
     this.activateForm = function () {
-      this.formAdd.classList.add('sidebar-container_add_form-wrap_active');
+      this.formAdd.classList.add('sidebar-container__add__form-wrap__active');
     };
     this.disableForm = function () {
-      this.formAdd.classList.remove('sidebar-container_add_form-wrap_active');
+      this.formAdd.classList.remove('sidebar-container__add__form-wrap__active');
     };
     this.sendForm = function () {
       const createTime = new Date(),

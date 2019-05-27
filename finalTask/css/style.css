@@ -46,7 +46,7 @@ html {
   text-transform: capitalize;
 }
 
-.header-container_info-links {
+.header-container__info-links {
   padding: 0 20px;
   color: #69738c;
   text-decoration: none;
@@ -57,7 +57,7 @@ html {
   color: #202737;
 }
 
-.header-container_sign-in {
+.header-container__sign-in {
   width: 158px;
   height: 45px;
   text-align: center;
@@ -66,29 +66,22 @@ html {
   cursor: pointer;
 }
 
-.header-container_sign-in:hover {
+.header-container__sign-in:hover {
   background: #42b0f5;
 }
 
-.header-container_sign-in_title {
+.header-container__sign-in__title {
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 
-.header-container_sign-in_title > * {
+/*Вы написали мне, что это бесполезно, но если я убираю "> *", то событие 'click' перестает работать на Sign-in*/
+.header-container__sign-in__title > * {
   pointer-events: none;
 }
 
-/* .header-container_sign-in_title > img {
-  width: 30px;
-  height: 30px;
-  border: 1px solid #fff;
-  border-radius: 50%;
-  -webkit-user-select: none;
-} */
-
-.header-container_sign-in_title_img {
+.header-container__sign-in__title__img {
   width: 30px;
   height: 30px;
   border: 1px solid #fff;
@@ -96,7 +89,7 @@ html {
   -webkit-user-select: none;
 }
 
-.header-container_sign-in_menu {
+.header-container__sign-in__menu {
   position: absolute;
   display: none;
   width: 158px;
@@ -105,19 +98,19 @@ html {
   background: #15a4fa;
 }
 
-.header-container_sign-in_menu_dropmenu {
+.header-container__sign-in__menu__dropmenu {
   display: flex;
   z-index: 300;
 }
 
-.header-container_sign-in_menu_btn-wrap {
+.header-container__sign-in__menu__buttons-wrap {
   display: flex;
   height: 34px;
   justify-content: space-around;
   align-items: center;
 }
 
-.header-container_sign-in_menu_btn-wrap_btn {
+.header-container__sign-in__menu__buttons-wrap__button {
   width: 60px;
   padding: 0 5px;
   border: 1px solid #fff;
@@ -141,6 +134,7 @@ html {
 -------------Sidebar-------------
 -------------------------------*/
 
+/*flex-shrink использую для запрета сжатия 'кнопок'. Без него все плывет*/
 .sidebar-container {
   display: grid;
   width: 200px;
@@ -168,7 +162,8 @@ html {
 
 /*---------Sidebar button--------*/
 
-.sidebar-container_add {
+/*Я использую микс из гридов и флексов. В данном случае флекс-элемент позиционируется в сетке грид-родителя (grid-row: 1)*/
+.sidebar-container__add {
   display: flex;
   grid-row: 1;
   justify-content: center;
@@ -176,7 +171,7 @@ html {
   background: #1f2637;
 }
 
-.sidebar-container_add_button {
+.sidebar-container__add__button {
   width: 160px;
   height: 44px;
   border: none;
@@ -191,15 +186,15 @@ html {
   cursor: pointer;
 }
 
-.sidebar-container_add_button:hover {
+.sidebar-container__add__button:hover {
   background: #eb846b;
 }
 
-.sidebar-container_add_button > i {
+.sidebar-container__add__button > i {
   padding-right: 13px;
 }
 
-.sidebar-container_add_form-wrap {
+.sidebar-container__add__form-wrap {
   position: fixed;
   display: none;
   left: 0;
@@ -212,11 +207,11 @@ html {
   z-index: 300;
 }
 
-.sidebar-container_add_form-wrap_active {
+.sidebar-container__add__form-wrap__active {
   display: flex;
 }
 
-.sidebar-container_add_form-wrap_form {
+.sidebar-container__add__form-wrap__form {
   display: flex;
   width: 350px;
   height: 410px;
@@ -230,7 +225,7 @@ html {
   line-height: 25px;
 }
 
-.sidebar-container_add_form-wrap_form > input {
+.sidebar-container__add__form-wrap__form > input {
   width: 310px;
   height: 32px;
   padding: 0 20px;
@@ -239,20 +234,18 @@ html {
   margin-bottom: 10px;
 }
 
-.sidebar-container_add_form-wrap_form > select {
+.sidebar-container__add__form-wrap__form > select {
   padding: 0 20px;
   border: 1px solid #c7cddb;
   margin-bottom: 10px;
 }
 
-.sidebar-container_add_form-wrap_form_btns-wrap {
+.sidebar-container__add__form-wrap__form__buttons-wrap {
   display: flex;
   justify-content: space-between;
 }
 
-.sidebar-container_add_form-wrap_form_btns-wrap_btn-add,
-.sidebar-container_add_form-wrap_form_btns-wrap_btn-reset,
-.sidebar-container_add_form-wrap_form_btns-wrap_btn-close {
+.sidebar-container__add__form-wrap__form__buttons-wrap__button {
   width: 110px;
   height: 32px;
   padding: 0 20px;
@@ -263,7 +256,7 @@ html {
 
 /*-----------Sidebar nav----------*/
 
-.sidebar-container_nav {
+.sidebar-container__nav {
   display: flex;
   grid-row: 2;
   padding: 0 0 15px 0;
@@ -274,7 +267,7 @@ html {
 
 /*--------Sidebar myFolders-------*/
 
-.sidebar-container_my-folders {
+.sidebar-container__my-folders {
   display: flex;
   grid-row: 3;
   padding-top: 15px;
@@ -283,11 +276,11 @@ html {
   flex-direction: column;
 }
 
-.sidebar-container_my-folders a {
+.sidebar-container__my-folders a {
   line-height: 33px;
 }
 
-.sidebar-container_my-folders span {
+.sidebar-container__my-folders span {
   position: relative;
   top: 5px;
   padding: 0 11px 0 2px;
@@ -295,34 +288,35 @@ html {
   font-weight: bold;
 }
 
-.sidebar-container_my-folders a:first-child span {
+.sidebar-container__my-folders a:first-child span {
   color: #e64c66;
 }
 
-.sidebar-container_my-folders a:nth-child(2) span {
+.sidebar-container__my-folders a:nth-child(2) span {
   color: #ffab00;
 }
 
-.sidebar-container_my-folders a:nth-child(3) span {
+.sidebar-container__my-folders a:nth-child(3) span {
   color: #00bfdd;
 }
 
-.sidebar-container_my-folders a:last-child span {
+.sidebar-container__my-folders a:last-child span {
   color: #7874cf;
 }
 
 /* for JS */
-.sidebar-container_my-folders_active-btn {
+/*Про important осведомлен, но в данном случае я посчитал его использование допустимым*/
+.sidebar-container__my-folders__active-btn {
   background: #15a4fa;
   color: #fff !important;
 }
 /*----------Sidebar actions---------*/
 
-.sidebar-container_recent-actions {
+.sidebar-container__recent-actions {
   grid-row: 4;
   border-top: 1px solid #282f41;
   background: #1f2637;
-  overflow: auto;
+  overflow-y: auto;
   overflow-x: hidden;
 }
 
@@ -337,7 +331,7 @@ html {
 }
 
 /* Не задаю класс элементам истории (ниже), чтобы лишний раз не привязывать эти классы в JS */
-.sidebar-container_recent-actions div {
+.sidebar-container__recent-actions div {
   position: relative;
   padding: 25px 20px 0 45px;
   color: #b6b6b6;
@@ -345,7 +339,7 @@ html {
   line-height: 20px;
 }
 
-.sidebar-container_recent-actions i {
+.sidebar-container__recent-actions i {
   position: absolute;
   font-size: 16px;
   left: 18px;
@@ -353,15 +347,15 @@ html {
   font-weight: 400;
 }
 
-.sidebar-container_recent-actions div p:first-letter {
+.sidebar-container__recent-actions div p:first-letter {
   text-transform: uppercase;
 }
 
-.sidebar-container_recent-actions b {
+.sidebar-container__recent-actions b {
   text-transform: capitalize;
 }
 
-.sidebar-container_recent-actions div p:nth-child(3n) {
+.sidebar-container__recent-actions div p:nth-child(3n) {
   padding-top: 10px;
   font-weight: 300;
 }
@@ -370,23 +364,23 @@ html {
 -------------Main-------------
 -------------------------------*/
 
-.main-container_title,
-.main-container_nav {
+.main-container__title,
+.main-container__nav {
   text-transform: capitalize;
 }
 
 .main-container {
   display: grid;
   left: 200px;
+  width: 100%;
   min-width: 810px;
   background: #eef1f7;
-  flex-basis: 100%;
   grid-template-rows: 70px 50px 1fr;
 }
 
 /*-----------Main title----------*/
 
-.main-container_title {
+.main-container__title {
   grid-row: 1;
   color: #444c63;
   font-size: 22px;
@@ -396,7 +390,7 @@ html {
 
 /*------------Main nav-----------*/
 
-.main-container_nav {
+.main-container__nav {
   grid-row: 2;
   position: relative;
   display: flex;
@@ -408,7 +402,7 @@ html {
   font-size: 12px;
 }
 
-.main-container_nav a {
+.main-container__nav a {
   text-decoration: none;
   color: #8c97b2;
   padding: 5px 11px;
@@ -416,49 +410,40 @@ html {
   cursor: pointer;
 }
 
-.main-container_nav a:hover {
+.main-container__nav a:hover {
   color: #fff;
   background: #97b3ce;
 }
 
 /* For JS */
-.main-container_nav_active {
+/*Про important осведомлен, но в данном случае я посчитал его использование допустимым*/
+.main-container__nav__active {
   color: #fff !important;
   background: #97b3ce;
 }
 
-/* .main-container_nav input {
+.main-container__nav__search {
   width: 340px;
   height: 32px;
-  padding-left: 20px;
-  padding-right: 40px;
-  border: 1px solid #c7cddb;
-  border-radius: 20px;
-} */
-
-.main-container_nav_search {
-  width: 340px;
-  height: 32px;
-  padding-left: 20px;
-  padding-right: 40px;
+  padding: 0 40px 0 20px;
   border: 1px solid #c7cddb;
   border-radius: 20px;
   outline:none;
 }
-.main-container_nav i {
+.main-container__nav i {
   position: absolute;
   right: 40px;
   color: #8c97b2;
   cursor: pointer;
 }
 
-.main-container_nav i:hover {
+.main-container__nav i:hover {
   color: #15a4fa;
 }
 
 /*-----------Main items----------*/
 
-.main-container_content {
+.main-container__content {
   grid-row: 3;
   display: grid;
   padding: 10px 10px;
@@ -470,7 +455,7 @@ html {
   justify-content: space-around;
 }
 
-.main-container_content_item {
+.main-container__content__item {
   display: flex;
   width: 200px;
   height: 350px;
@@ -479,20 +464,20 @@ html {
 }
 
 /* Не задаю класс элементам ниже, чтобы лишний раз не привязывать эти классы в JS при создании книг */
-.main-container_content_item img {
+.main-container__content__item img {
   width: 200px;
   height: 275px;
   border-radius: 5px;
 }
 
-.main-container_content_item > span:nth-child(2) {
+.main-container__content__item > span:nth-child(2) {
   padding-top: 15px;
   padding-bottom: 3px;
   font-size: 16px;
   color: #444c63;
 }
 
-.main-container_content_item > span:nth-child(3) {
+.main-container__content__item > span:nth-child(3) {
   padding-bottom: 7px;
   font-size: 12px;
   color: #6f7d95;
@@ -500,12 +485,12 @@ html {
 
 /*---Main items StarRaiting---*/
 
-.main-container_content_item_rating {
+.main-container__content__item__rating {
   cursor: default;
   -webkit-user-select: none;
 }
 
-.main-container_content_item_rating_star {
+.main-container__content__item__rating__star {
   position: relative;
   font-size: 14px;
   width: 15px;
@@ -520,7 +505,6 @@ html {
 
 .footer-container {
   display: flex;
-  /* min-width: 1320px; */
   min-width: 1010px;
   width: 100%;
   height: 45px;
@@ -539,18 +523,18 @@ html {
 
 /*--------Footer buttons--------*/
 
-.footer-container_help {
+.footer-container__help {
   background: #1f2637;
 }
 
-.footer-container_help:hover {
+.footer-container__help:hover {
   background: #2a3144;
 }
 
-.footer-container_tools {
+.footer-container__tools {
   background: #15a4fa;
 }
 
-.footer-container_tools:hover {
+.footer-container__tools:hover {
   background: #42b0f5;
 }

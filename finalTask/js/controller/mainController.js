@@ -32,7 +32,7 @@ class FilterController extends Filter {
   };
 };
 
-const filter = new FilterController();
+const filter = new FilterController;
 
 // -------------------------------------
 // --------------AddBook----------------
@@ -42,10 +42,10 @@ class AddBookController extends AddBook {
   constructor () {
     super();
 // getting elements
-    this.btnStartAdd = document.querySelector('.sidebar-container_add_button');
-    this.btnAdd = document.querySelector('.sidebar-container_add_form-wrap_form_btns-wrap_btn-add');
-    this.btnClose = document.querySelector('.sidebar-container_add_form-wrap_form_btns-wrap_btn-close');
-    this.formAdd = document.querySelector('.sidebar-container_add_form-wrap');
+    this.btnStartAdd = document.querySelector('.sidebar-container__add__button');
+    this.btnAdd = document.querySelector('#formAddButton');
+    this.btnClose = document.querySelector('#formCloseButtton');
+    this.formAdd = document.querySelector('.sidebar-container__add__form-wrap');
     this.inputBookTitle = document.querySelector('#bookTitle');
     this.inputAuthorFirstName = document.querySelector('#authorFirstName');
     this.inputAuthorLastName = document.querySelector('#authorLastName');
@@ -59,4 +59,22 @@ class AddBookController extends AddBook {
   };
 };
 
-const addbook = new AddBookController();
+const addbook = new AddBookController;
+
+// -------------------------------------
+// --------------Sign-in----------------
+// -------------------------------------
+
+class SignInController extends SignIn {
+  constructor () {
+    super();
+// getting elements
+    this.btn = document.querySelector('.header-container__sign-in__title');
+    this.dropdown_menu = document.querySelector('.header-container__sign-in__menu');
+// add listeners
+    this.btn.addEventListener('click', () => {this.dropdown_menu.classList.toggle('header-container__sign-in__menu__dropmenu')});
+    document.addEventListener('click', (e) => this.hideMenu(e));
+  };
+};
+
+const signIn = new SignInController;
