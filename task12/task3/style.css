@@ -21,5 +21,6 @@
 .rating_red-black {
   background: linear-gradient(to right, red 50%, black 50%);
   background-clip: text;
+  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

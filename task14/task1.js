@@ -21,7 +21,11 @@ const Calculator = new function () {
     return this;
   };
   this.fetchData = function (callback) {
-    setTimeout(callback, 3000, 500);
+    setTimeout(() => {
+      callback(500);
+      console.log(this.getResult());
+    }, 3000);
+    
     return this;
   };
   this.reset = function () {
@@ -32,3 +36,6 @@ const Calculator = new function () {
     return _result;
   };
 };
+
+Calculator.fetchData(Calculator.setState); // через 3 секунды изменит стейт результата на 500.
+console.log(Calculator.getResult()); // 0

@@ -1,8 +1,8 @@
 function Hangman(word) {
-  let _word = word.toLowerCase(),
-    _errors = 6,
-    _wrongLetters = [],
-    _result = '_'.repeat(_word.length);
+  let _word,
+    _errors,
+    _wrongLetters,
+    _result;
   this.guess = function (letter) {
     const Letter = letter.toLowerCase();
     if (!_errors) console.log('You lost! Game Over!');
@@ -39,4 +39,5 @@ function Hangman(word) {
     _result = '_'.repeat(_word.length);
     return this;
   };
+  this.startAgain(word);
 };
