@@ -1,0 +1,540 @@
+@font-face {
+  font-family: 'fonte83bfa80b23aa88b149def5b37a5bf9b';
+    src: url('https://nomail.com.ua/files/eot/e83bfa80b23aa88b149def5b37a5bf9b.eot?#iefix') format('embedded-opentype'),
+      url('https://nomail.com.ua/files/woff/e83bfa80b23aa88b149def5b37a5bf9b.woff') format('woff'),
+      url('https://nomail.com.ua/files/woff2/e83bfa80b23aa88b149def5b37a5bf9b.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'font618eab4981d4d3d04cd3da818dfb0d01';
+   src: url('https://nomail.com.ua/files/eot/618eab4981d4d3d04cd3da818dfb0d01.eot?#iefix') format('embedded-opentype'),
+     url('https://nomail.com.ua/files/woff/618eab4981d4d3d04cd3da818dfb0d01.woff') format('woff'),
+     url('https://nomail.com.ua/files/woff2/618eab4981d4d3d04cd3da818dfb0d01.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'font6493f4032b0372533ac0084d8f5fc18e';
+    src: url('https://nomail.com.ua/files/eot/6493f4032b0372533ac0084d8f5fc18e.eot?#iefix') format('embedded-opentype'),
+      url('https://nomail.com.ua/files/woff/6493f4032b0372533ac0084d8f5fc18e.woff') format('woff'),
+      url('https://nomail.com.ua/files/woff2/6493f4032b0372533ac0084d8f5fc18e.woff2') format('woff2');
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: 'ProximaNova', sans-serif;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+/*-------------------------------
+-------------Header-------------
+-------------------------------*/
+
+.header-container {
+  display: flex;
+  justify-content: flex-end;
+  min-width: 1010px;
+  height: 45px;
+  background: #2f364a;
+  font-size: 13px;
+  line-height: 45px;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+.header-container__info-links {
+  padding: 0 20px;
+  color: #69738c;
+  text-decoration: none;
+}
+
+.header-container > span {
+  font-size: 18px;
+  color: #202737;
+}
+
+.header-container__sign-in {
+  width: 158px;
+  height: 45px;
+  text-align: center;
+  background: #15a4fa;
+  color: #fff;
+  cursor: pointer;
+}
+
+.header-container__sign-in:hover {
+  background: #42b0f5;
+}
+
+.header-container__sign-in__title {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/*Вы написали мне, что это бесполезно, но если я убираю "> *", то событие 'click' перестает работать на Sign-in*/
+.header-container__sign-in__title > * {
+  pointer-events: none;
+}
+
+.header-container__sign-in__title__img {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  -webkit-user-select: none;
+}
+
+.header-container__sign-in__menu {
+  position: absolute;
+  display: none;
+  width: 158px;
+  height: 70px;
+  flex-direction: column;
+  background: #15a4fa;
+}
+
+.header-container__sign-in__menu__dropmenu {
+  display: flex;
+  z-index: 300;
+}
+
+.header-container__sign-in__menu__buttons-wrap {
+  display: flex;
+  height: 34px;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.header-container__sign-in__menu__buttons-wrap__button {
+  width: 60px;
+  padding: 0 5px;
+  border: 1px solid #fff;
+  border-radius: 12px;
+  background: #8c97b2;
+  color: #fff;
+}
+
+/*-------------------------------
+-------Sidebar&Main-Wrap---------
+-------------------------------*/
+
+#center-section-wrap {
+  position: relative;
+  display: flex;
+  min-height: 900px;
+  height: calc(100% - 90px);
+}
+
+/*-------------------------------
+-------------Sidebar-------------
+-------------------------------*/
+
+/*flex-shrink использую для запрета сжатия 'кнопок'. Без него все плывет*/
+.sidebar-container {
+  display: grid;
+  width: 200px;
+  grid-template-rows: 115px 240px 185px 1fr;
+  grid-row-gap: 5px;
+  background: #19202e;
+  flex-shrink: 0;
+}
+
+.sidebar-container a {
+  line-height: 38px;
+  padding: 0 20px;
+  text-decoration: none;
+  text-transform: capitalize;
+  color: #b6b6b6;
+  cursor: pointer;
+}
+
+.sidebar-container a:hover,
+.sidebar-container a:focus {
+  background: #15a4fa;
+  color: #fff;
+  outline: none;
+}
+
+/*---------Sidebar button--------*/
+
+/*Я использую микс из гридов и флексов. В данном случае флекс-элемент позиционируется в сетке грид-родителя (grid-row: 1)*/
+.sidebar-container__add {
+  display: flex;
+  grid-row: 1;
+  justify-content: center;
+  align-items: center;
+  background: #1f2637;
+}
+
+.sidebar-container__add__button {
+  width: 160px;
+  height: 44px;
+  border: none;
+  border-radius: 5px;
+  background: #f2795a;
+  color: #fff;
+  text-align: center;
+  line-height: 44px;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.sidebar-container__add__button:hover {
+  background: #eb846b;
+}
+
+.sidebar-container__add__button > i {
+  padding-right: 13px;
+}
+
+.sidebar-container__add__form-wrap {
+  position: fixed;
+  display: none;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 300;
+}
+
+.sidebar-container__add__form-wrap__active {
+  display: flex;
+}
+
+.sidebar-container__add__form-wrap__form {
+  display: flex;
+  width: 350px;
+  height: 410px;
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 15px;
+  box-shadow: 1px 1px black,  -1px -1px black, 1px -1px 10px black,  -1px 1px 10px black;
+  background: #1f2637;
+  color: #b6b6b6;
+  flex-direction: column;
+  line-height: 25px;
+}
+
+.sidebar-container__add__form-wrap__form > input {
+  width: 310px;
+  height: 32px;
+  padding: 0 20px;
+  border: 1px solid #c7cddb;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+
+.sidebar-container__add__form-wrap__form > select {
+  padding: 0 20px;
+  border: 1px solid #c7cddb;
+  margin-bottom: 10px;
+}
+
+.sidebar-container__add__form-wrap__form__buttons-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sidebar-container__add__form-wrap__form__buttons-wrap__button {
+  width: 110px;
+  height: 32px;
+  padding: 0 20px;
+  border: 1px solid #c7cddb;
+  border-radius: 20px;
+}
+
+
+/*-----------Sidebar nav----------*/
+
+.sidebar-container__nav {
+  display: flex;
+  grid-row: 2;
+  padding: 0 0 15px 0;
+  border-top: 1px solid #282f41;
+  background: #1f2637;
+  flex-direction: column;
+}
+
+/*--------Sidebar myFolders-------*/
+
+.sidebar-container__my-folders {
+  display: flex;
+  grid-row: 3;
+  padding-top: 15px;
+  border-top: 1px solid #282f41;
+  background: #1f2637;
+  flex-direction: column;
+}
+
+.sidebar-container__my-folders a {
+  line-height: 33px;
+}
+
+.sidebar-container__my-folders span {
+  position: relative;
+  top: 5px;
+  padding: 0 11px 0 2px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.sidebar-container__my-folders a:first-child span {
+  color: #e64c66;
+}
+
+.sidebar-container__my-folders a:nth-child(2) span {
+  color: #ffab00;
+}
+
+.sidebar-container__my-folders a:nth-child(3) span {
+  color: #00bfdd;
+}
+
+.sidebar-container__my-folders a:last-child span {
+  color: #7874cf;
+}
+
+/* for JS */
+/*Про important осведомлен, но в данном случае я посчитал его использование допустимым*/
+.sidebar-container__my-folders__active-btn {
+  background: #15a4fa;
+  color: #fff !important;
+}
+/*----------Sidebar actions---------*/
+
+.sidebar-container__recent-actions {
+  grid-row: 4;
+  border-top: 1px solid #282f41;
+  background: #1f2637;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: #ccd5e4;
+}
+
+/* Не задаю класс элементам истории (ниже), чтобы лишний раз не привязывать эти классы в JS */
+.sidebar-container__recent-actions div {
+  position: relative;
+  padding: 25px 20px 0 45px;
+  color: #b6b6b6;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.sidebar-container__recent-actions i {
+  position: absolute;
+  font-size: 16px;
+  left: 18px;
+  top: 30px;
+  font-weight: 400;
+}
+
+.sidebar-container__recent-actions div p:first-letter {
+  text-transform: uppercase;
+}
+
+.sidebar-container__recent-actions b {
+  text-transform: capitalize;
+}
+
+.sidebar-container__recent-actions div p:nth-child(3n) {
+  padding-top: 10px;
+  font-weight: 300;
+}
+
+/*-------------------------------
+-------------Main-------------
+-------------------------------*/
+
+.main-container__title,
+.main-container__nav {
+  text-transform: capitalize;
+}
+
+.main-container {
+  display: grid;
+  left: 200px;
+  width: 100%;
+  min-width: 810px;
+  background: #eef1f7;
+  grid-template-rows: 70px 50px 1fr;
+}
+
+/*-----------Main title----------*/
+
+.main-container__title {
+  grid-row: 1;
+  color: #444c63;
+  font-size: 22px;
+  padding-left: 23px;
+  line-height: 70px;
+}
+
+/*------------Main nav-----------*/
+
+.main-container__nav {
+  grid-row: 2;
+  position: relative;
+  display: flex;
+  padding: 0 20px;
+  border-top: 1px solid #dadfea;
+  border-bottom: 1px solid #dadfea;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+}
+
+.main-container__nav a {
+  text-decoration: none;
+  color: #8c97b2;
+  padding: 5px 11px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.main-container__nav a:hover {
+  color: #fff;
+  background: #97b3ce;
+}
+
+/* For JS */
+/*Про important осведомлен, но в данном случае я посчитал его использование допустимым*/
+.main-container__nav__active {
+  color: #fff !important;
+  background: #97b3ce;
+}
+
+.main-container__nav__search {
+  width: 340px;
+  height: 32px;
+  padding: 0 40px 0 20px;
+  border: 1px solid #c7cddb;
+  border-radius: 20px;
+  outline:none;
+}
+.main-container__nav i {
+  position: absolute;
+  right: 40px;
+  color: #8c97b2;
+  cursor: pointer;
+}
+
+.main-container__nav i:hover {
+  color: #15a4fa;
+}
+
+/*-----------Main items----------*/
+
+.main-container__content {
+  grid-row: 3;
+  display: grid;
+  padding: 10px 10px;
+  overflow: auto;
+  overflow-x: hidden;
+  grid-template-columns: repeat(auto-fill, 200px);
+  grid-gap: 1rem;
+  grid-row-gap: unset;
+  justify-content: space-around;
+}
+
+.main-container__content__item {
+  display: flex;
+  width: 200px;
+  height: 350px;
+  padding: 15px 0px;
+  flex-direction: column;
+}
+
+/* Не задаю класс элементам ниже, чтобы лишний раз не привязывать эти классы в JS при создании книг */
+.main-container__content__item img {
+  width: 200px;
+  height: 275px;
+  border-radius: 5px;
+}
+
+.main-container__content__item > span:nth-child(2) {
+  padding-top: 15px;
+  padding-bottom: 3px;
+  font-size: 16px;
+  color: #444c63;
+}
+
+.main-container__content__item > span:nth-child(3) {
+  padding-bottom: 7px;
+  font-size: 12px;
+  color: #6f7d95;
+}
+
+/*---Main items StarRaiting---*/
+
+.main-container__content__item__rating {
+  cursor: default;
+  -webkit-user-select: none;
+}
+
+.main-container__content__item__rating__star {
+  position: relative;
+  font-size: 14px;
+  width: 15px;
+  letter-spacing: -4px;
+  color: #ffab00;
+  cursor: pointer;
+}
+
+/*-------------------------------
+-------------Footer-------------
+-------------------------------*/
+
+.footer-container {
+  display: flex;
+  min-width: 1010px;
+  width: 100%;
+  height: 45px;
+  background: #181e2c;
+  justify-content: flex-end;
+}
+
+.footer-container > button {
+  width: 55px;
+  border: none;
+  color: #fff;
+  text-align: center;
+  line-height: 45px;
+  cursor: pointer;
+}
+
+/*--------Footer buttons--------*/
+
+.footer-container__help {
+  background: #1f2637;
+}
+
+.footer-container__help:hover {
+  background: #2a3144;
+}
+
+.footer-container__tools {
+  background: #15a4fa;
+}
+
+.footer-container__tools:hover {
+  background: #42b0f5;
+}

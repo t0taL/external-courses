@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>finalTask</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+</head>
+<body>
+  <header class="header-container">
+    <a href="#" class="header-container__info-links">help center</a>&bull;
+    <a href="#" class="header-container__info-links">our support</a>
+    <div class="header-container__sign-in">
+      <div class="header-container__sign-in__title">
+        <img class="header-container__sign-in__title__img" src="img/no-foto.jpg" alt="foto">
+        <span>sign-in</span>
+        <i class="fas fa-chevron-circle-down"></i>
+      </div>
+      <form class="header-container__sign-in__menu">
+        <input type="text" placeholder="Login">
+        <input type="password" placeholder="Password">
+        <div class="header-container__sign-in__menu__buttons-wrap">
+          <button type="submit" class="header-container__sign-in__menu__buttons-wrap__button">sign-in</button>
+          <button type="reset" class="header-container__sign-in__menu__buttons-wrap__button">reset</button>
+        </div>
+      </form>
+    </div>
+  </header>
+  <section id="center-section-wrap">
+    <aside class="sidebar-container">
+      <section class="sidebar-container__add">
+        <button class="sidebar-container__add__button">
+          <i class="fas fa-plus"></i>&nbsp; add a book
+        </button>
+        <div class="sidebar-container__add__form-wrap">
+          <form action="GET" class="sidebar-container__add__form-wrap__form">
+            <input id="bookTitle" type="text" placeholder="The book title">
+            <input id="authorFirstName" type="text" placeholder="The author's first name">
+            <input id="authorLastName" type="text" placeholder="The author's last name">
+            <input id="bookCost" type="number" placeholder="The book cost">
+            Book categories (For multiple selections press ctrl + click): <select id="bookCategories" multiple="multiple">
+              <option value="must_read">Must Read Title</option>
+              <option value="best">Best Of List</option>
+              <option value="classic_novels">Classic Novels</option>
+              <option value="non_fiction">Non Fiction</option>
+            </select>
+            <input id="bookImg" type="text" placeholder="Book image link">
+            <div class="sidebar-container__add__form-wrap__form__buttons-wrap">
+              <button type="button" id="formAddButton" class="sidebar-container__add__form-wrap__form__buttons-wrap__button">Add book</button>
+              <button type="reset" class="sidebar-container__add__form-wrap__form__buttons-wrap__button">Reset</button>
+              <button type="button" id="formCloseButtton" class="sidebar-container__add__form-wrap__form__buttons-wrap__button">Close</button>
+              </div>
+          </form>
+      </div>
+      </section>
+      <nav class="sidebar-container__nav list-group">
+        <a class="list-group-item"><i class="fa fa-book fa-fw"></i>&nbsp; now reading</a>
+        <a class="list-group-item"><i class="fa fa-globe-americas fa-fw"></i>&nbsp; browse</a>
+        <a class="list-group-item"><i class="fa fa-shopping-cart fa-fw"></i>&nbsp; buy books</a>
+        <a class="list-group-item"><i class="far fa-star fa-fw"></i>&nbsp; favourite books</a>
+        <a class="list-group-item"><i class="fa fa-th-list fa-fw"></i>&nbsp; wishlist</a>
+        <a class="list-group-item"><i class="far fa-clock fa-fw"></i>&nbsp; history</a>
+      </nav>
+      <section class="sidebar-container__my-folders">
+        <a id="btnMustReadTitles" data-value="must_read" data-name="Must Read Titles"><span>&bull;</span> must read titles</a>
+        <a id="btnBestOfList" data-value="best" data-name="Best of List"><span>&bull;</span> best of list</a>
+        <a id="btnClassicNovels" data-value="classic_novels" data-name="Classic Novels"><span>&bull;</span> classic novels</a>
+        <a id="btnNonFiction" data-value="non_fiction" data-name="Non Fiction"><span>&bull;</span> non fiction</a>
+      </section>
+      <section class="sidebar-container__recent-actions"></section>
+    </aside>
+    <section class="main-container">
+      <div class="main-container__title">browse available books</div>
+      <nav class="main-container__nav">
+        <div class="main-container__nav__links-wrap">
+          <a id="btnAllBooks" data-value="id" data-name="All Books">all books</a>
+          <a id="btnMostRecent" data-value="updatedAt" data-name="Most Recent">most recent</a>
+          <a id="btnMostPopular" data-value="rating" data-name="Most Popular">most popular</a>
+          <a id="btnFreeBooks" data-value="cost" data-name="Free Books">free books</a>
+        </div>
+        <input class="main-container__nav__search" type="text" placeholder="Enter Keywords" id="inputSearch">
+        <i class="fas fa-search" id="btnSearch"></i>
+      </nav>
+      <section class="main-container__content"></section>
+    </section>
+  </section>
+  <footer class="footer-container">
+    <button class="footer-container__help">
+      <i class="fas fa-question-circle"></i>
+    </button>
+    <button class="footer-container__tools">
+      <i class="fas fa-cog"></i>
+    </button>
+  </footer>
+  <script src="js/view/renders.js"></script>
+  <script src="js/model/constructors.js"></script>
+  <script src="js/model/addingBooks.js"></script>
+  <script src="js/model/booksFilter.js"></script>
+  <script src="js/model/signIn.js"></script>
+  <script src="js/model/startInit.js"></script>
+  <script src="js/controller/mainController.js"></script>
+</body>
+</html>
